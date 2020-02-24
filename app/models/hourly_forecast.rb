@@ -18,7 +18,7 @@
 #  wind_spd   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  address_id :integer....
+#  address_id :integer
 #
 class HourlyForecast < ApplicationRecord
   belongs_to :address
