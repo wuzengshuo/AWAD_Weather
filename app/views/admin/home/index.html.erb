@@ -30,7 +30,7 @@
       enterable: true,
       formatter: function(params) {
         var value = params.value;
-        var a = `<br> <a href="/admin/daily_forecasts?address_id=${value[3]}" style="color: red">see details</a>`
+        var a = `<br> <a href="/admin/daily_forecasts?address_id=${value[3]}" style="color: blue">see details</a>`
         return params.name + ': ' + value[2] + a;
       }
     },
