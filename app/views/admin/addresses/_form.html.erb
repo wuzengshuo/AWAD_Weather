@@ -1,0 +1,15 @@
+<%= simple_form_for([:admin, address]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :cid %>
+    <%= f.input :parent_city %>
+    <%= f.input :lon %>
+    <%= f.input :lat %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('buttons.save'), data: { disable_with: "保存中..." }, class: "ui button primary" %>
+    <%= link_to t('buttons.cancel'), admin_addresses_path, class: "ui button" %>
+  </div>
+<% end %>

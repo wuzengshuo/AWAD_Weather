@@ -1,0 +1,107 @@
+<table>
+  <thead>
+    <tr>
+      <th style="width:30%">属性</th>
+      <th>值</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:address_id) %>:</th>
+      <td><%= @daily_forecast.address_id %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:cond_code_d) %>:</th>
+      <td><%= @daily_forecast.cond_code_d %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:cond_code_n) %>:</th>
+      <td><%= @daily_forecast.cond_code_n %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:cond_txt_d) %>:</th>
+      <td><%= @daily_forecast.cond_txt_d %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:cond_txt_n) %>:</th>
+      <td><%= @daily_forecast.cond_txt_n %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:vdate) %>:</th>
+      <td><%= @daily_forecast.vdate %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:hum) %>:</th>
+      <td><%= @daily_forecast.hum %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:pcpn) %>:</th>
+      <td><%= @daily_forecast.pcpn %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:pop) %>:</th>
+      <td><%= @daily_forecast.pop %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:pres) %>:</th>
+      <td><%= @daily_forecast.pres %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:tmp_max) %>:</th>
+      <td><%= @daily_forecast.tmp_max %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:tmp_min) %>:</th>
+      <td><%= @daily_forecast.tmp_min %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:uv_index) %>:</th>
+      <td><%= @daily_forecast.uv_index %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:vis) %>:</th>
+      <td><%= @daily_forecast.vis %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:wind_deg) %>:</th>
+      <td><%= @daily_forecast.wind_deg %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:wind_dir) %>:</th>
+      <td><%= @daily_forecast.wind_dir %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:wind_sc) %>:</th>
+      <td><%= @daily_forecast.wind_sc %></td>
+    </tr>
+
+    <tr>
+      <th><%= DailyForecast.human_attribute_name(:wind_spd) %>:</th>
+      <td><%= @daily_forecast.wind_spd %></td>
+    </tr>
+
+  </tbody>
+</table>
+<div class="actions">
+  <%= link_to t('actions.edit'), edit_admin_daily_forecast_path(@daily_forecast), class: "ui button primary" %>
+  <%= link_to t('buttons.back'), admin_daily_forecasts_path, class: "ui button" %>
+</div>
+

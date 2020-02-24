@@ -1,0 +1,29 @@
+<%= simple_form_for([:admin, daily_forecast]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :address_id %>
+    <%= f.input :cond_code_d %>
+    <%= f.input :cond_code_n %>
+    <%= f.input :cond_txt_d %>
+    <%= f.input :cond_txt_n %>
+    <%= f.input :vdate %>
+    <%= f.input :hum %>
+    <%= f.input :pcpn %>
+    <%= f.input :pop %>
+    <%= f.input :pres %>
+    <%= f.input :tmp_max %>
+    <%= f.input :tmp_min %>
+    <%= f.input :uv_index %>
+    <%= f.input :vis %>
+    <%= f.input :wind_deg %>
+    <%= f.input :wind_dir %>
+    <%= f.input :wind_sc %>
+    <%= f.input :wind_spd %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('buttons.save'), data: { disable_with: "保存中..." }, class: "ui button primary" %>
+    <%= link_to t('buttons.cancel'), admin_daily_forecasts_path, class: "ui button" %>
+  </div>
+<% end %>

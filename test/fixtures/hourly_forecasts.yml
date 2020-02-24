@@ -1,0 +1,54 @@
+# == Schema Information
+#
+# Table name: hourly_forecasts
+#
+#  id         :bigint           not null, primary key
+#  cloud      :integer
+#  cond_code  :string(100)
+#  cond_txt   :string(100)
+#  dew        :integer
+#  hum        :decimal(14, 4)
+#  pop        :integer
+#  pres       :integer
+#  tmp        :decimal(14, 4)
+#  vtime      :datetime
+#  wind_deg   :integer
+#  wind_dir   :string(100)
+#  wind_sc    :string(100)
+#  wind_spd   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  address_id :integer
+#
+
+one:
+  address_id: 1
+  vtime: 2020-02-22 08:43:04
+  tmp: 9.99
+  cond_code: MyString
+  cond_txt: MyString
+  wind_deg: 1
+  wind_dir: MyString
+  wind_sc: MyString
+  wind_spd: 1
+  hum: 9.99
+  pres: 1
+  pop: 1
+  dew: 1
+  cloud: 1
+
+two:
+  address_id: 1
+  vtime: 2020-02-22 08:43:04
+  tmp: 9.99
+  cond_code: MyString
+  cond_txt: MyString
+  wind_deg: 1
+  wind_dir: MyString
+  wind_sc: MyString
+  wind_spd: 1
+  hum: 9.99
+  pres: 1
+  pop: 1
+  dew: 1
+  cloud: 1

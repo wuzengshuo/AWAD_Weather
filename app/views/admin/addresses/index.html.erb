@@ -1,0 +1,29 @@
+<div class="panel-header"><%= link_to t('actions.new') + Address.model_name.human, new_admin_address_path, class: "ui button primary" %></div>
+<table>
+  <thead>
+    <tr>
+        <th><%= Address.human_attribute_name(:cid) %></th>
+        <th><%= Address.human_attribute_name(:parent_city) %></th>
+        <th><%= Address.human_attribute_name(:lon) %></th>
+        <th><%= Address.human_attribute_name(:lat) %></th>
+        <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addresses.each do |address| %>
+      <tr>
+        <td><%= address.cid %></td>
+        <td><%= address.parent_city %></td>
+        <td><%= address.lon %></td>
+        <td><%= address.lat %></td>
+        <td>
+          <%= link_to [:admin, address], class: "ui button tiny primary" do -%><i class="ai ai-file"></i><% end %>
+          <%= link_to edit_admin_address_path(address), class: "ui button tiny warning" do -%><i class="ai ai-pencil"></i><% end %>
+          <%= link_to [:admin, address], method: :delete, data: { confirm: 'Are you sure?' }, class: "ui button tiny danger" do -%><i class="ai ai-times"></i><% end %>
+          <%#= link_to "查看近7天天气", [:admin, address], class: "ui button tiny primary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

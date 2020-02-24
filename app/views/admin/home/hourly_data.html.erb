@@ -1,0 +1,172 @@
+<h3><%= @address.parent_city %></h3>
+<div id="main" style="width: 100%;height:400px;"></div>
+<script>
+  var myChart = echarts.init(document.getElementById('main'));
+  var time_array = <%= raw @time_array %>
+  var tmp_array = <%= raw @tmp_array %>
+  option = {
+      title: {
+          text: 'Nearly 168 hours temperature trend'
+      },
+      tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+              type: 'cross',
+              label: {
+                  backgroundColor: '#6a7985'
+              }
+          }
+      },
+      legend: {
+          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+      },
+      toolbox: {
+          feature: {
+              saveAsImage: {}
+          }
+      },
+      grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+      },
+      xAxis: [
+          {
+              type: 'category',
+              boundaryGap: false,
+              data: time_array
+          }
+      ],
+      yAxis: [
+          {
+              type: 'value'
+          }
+      ],
+      series: [
+          {
+              name: 'tmp',
+              type: 'line',
+              stack: '总量',
+              areaStyle: {},
+              data: tmp_array
+          }
+      ]
+  };
+  myChart.setOption(option);
+</script>
+
+<div id="main_status" style="width: 100%;height:400px;"></div>
+<script>
+  var myChart1 = echarts.init(document.getElementById('main_status'));
+  var time_array1 = <%= raw @time_array %>
+  var status_array = <%= raw @status_array %>
+  option1 = {
+      title: {
+          text: 'Weather conditions for the last 168 hours'
+      },
+      tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+              type: 'cross',
+              label: {
+                  backgroundColor: '#6a7985'
+              }
+          }
+      },
+      legend: {
+          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+      },
+      toolbox: {
+          feature: {
+              saveAsImage: {}
+          }
+      },
+      grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+      },
+      xAxis: [
+          {
+              type: 'category',
+              boundaryGap: false,
+              data: time_array1
+          }
+      ],
+      yAxis: [
+          {
+              type: 'value'
+          }
+      ],
+      series: [
+          {
+              name: 'status',
+              type: 'line',
+              smooth: true,
+              stack: '总量',
+              areaStyle: {},
+              data: status_array
+          }
+      ]
+  };
+  myChart1.setOption(option1);
+</script>
+
+<div id="main_pop" style="width: 100%;height:400px;"></div>
+<script>
+  var myChart2 = echarts.init(document.getElementById('main_pop'));
+  var time_array2 = <%= raw @time_array %>
+  var pop_array = <%= raw @pop_array %>
+  option2 = {
+      title: {
+          text: 'Nearly 168 hours of precipitation'
+      },
+      tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+              type: 'cross',
+              label: {
+                  backgroundColor: '#6a7985'
+              }
+          }
+      },
+      legend: {
+          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+      },
+      toolbox: {
+          feature: {
+              saveAsImage: {}
+          }
+      },
+      grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+      },
+      xAxis: [
+          {
+              type: 'category',
+              boundaryGap: false,
+              data: time_array2
+          }
+      ],
+      yAxis: [
+          {
+              type: 'value'
+          }
+      ],
+      series: [
+          {
+              name: 'pop',
+              type: 'bar',
+              stack: '总量',
+              areaStyle: {},
+              data: pop_array
+          }
+      ]
+  };
+  myChart2.setOption(option2);
+</script>

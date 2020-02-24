@@ -1,0 +1,57 @@
+<style>
+  .s-sticker{
+    width:270px !important;
+  }
+</style>
+<h3 style="text-align: center;">UK weather forecast</h3>
+<div id="world" style="width: 100%; height: 600px"></div>
+<script>
+  var world = document.getElementById('world');
+  var worldMap = echarts.init(world);
+</script>
+<script>
+  var arr = <%= raw @data %>;
+  var param = [];
+  var params1 = []
+
+  $.each(arr,function(i,v){
+    param = []
+    param.push(v[2]);
+    param.push(v[1]);
+    param.push(v[3]);
+    param.push(v[4]);
+
+    params1.push({"name": v[0],"value": param });
+  });
+  console.log(params1)
+  var option = {
+    tooltip: {
+      alwaysShowContent: true,
+      enterable: true,
+      formatter: function(params) {
+        var value = params.value;
+        var a = `<br> <a href="/admin/daily_forecasts?address_id=${value[3]}" style="color: red">see details</a>`
+        return params.name + ': ' + value[2] + a;
+      }
+    },
+    geo: {
+      map: 'world',
+      center: [-2.97794,53.41058],
+      zoom: 20,
+      silent: false,
+      itemStyle: {
+        color: '#004981',
+        borderColor: 'rgb(54,192,118)'
+      }
+    },
+
+    series: [
+      {
+        type: 'effectScatter',
+        coordinateSystem: 'geo',
+        data: params1
+      }
+    ]
+  }
+  worldMap.setOption(option);
+</script>

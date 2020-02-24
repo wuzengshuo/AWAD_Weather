@@ -1,0 +1,24 @@
+<aside>
+  <a class="logo" href="/admin">英国天气</a>
+  <ul>
+    <li class="">
+      <a href="/admin" ><i class="ai ai-home"></i>主页</a>
+    </li>
+
+    <li class="nav-item">
+      <a href="javascript:;"><i class="ai ai-app"></i>Forecast</a>
+      <dl>
+        <dd class="<%= 'active' if request.fullpath =~ /admin\/addresses/ %>">
+          <a href="/admin/addresses">Address</a>
+        </dd>
+      </dl>
+    </li>
+  </ul>
+</aside>
+
+<script>
+  $(".nav-item").click(function(){
+    $(this).toggleClass("nav-item-open");
+  })
+  $(".active").parent().parent().addClass("nav-item-open")
+</script>

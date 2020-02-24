@@ -1,0 +1,28 @@
+en:
+  actions:
+    index: Index
+    new: New
+    edit: Edit
+    show: Show
+    destroy: Destroy
+    back: Back
+  buttons:
+    search: Search
+    create: Create
+    next: Next
+    cancel: Cancel
+    submit: Submit
+    save: Save
+    edit: Edit
+    back: Back
+    show: Show
+    new: New
+    update: Update
+    exit: Exit
+  views:
+    pagination:
+      first: First
+      last: Last
+      previous: Previous
+      next: Next
+      truncate: "..."
